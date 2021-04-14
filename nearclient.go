@@ -135,21 +135,3 @@ func (c *Client) Status() ([]byte, error) {
 
 	return resp, nil
 }
-
-func main() {
-
-	nearClient := Client{"https://rpc.testnet.near.org"}
-
-	resp, err := nearClient.FunctionCall("dev-1588039999690", "get_num", "e30=")
-
-	var result []int
-
-	if err := json.Unmarshal(resp.Result, &result); err != nil {
-		fmt.Println(err)
-	}
-
-	fmt.Println("result:", result, "logs:", resp.Logs, "err:", err)
-	//nearClient.Status()
-	//FunctionCall("dev-1588039999690", "get_num2", "e30=")
-	//FunctionCall("dev-1588039999690", "get_num2", "e30=")
-}
