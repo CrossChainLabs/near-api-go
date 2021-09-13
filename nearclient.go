@@ -78,8 +78,6 @@ func (c *Client) MakeRequest(data []byte) ([]byte, error) {
 		log.Fatalln(err)
 		return nil, err
 	}
-	sb := string(resp_body)
-	log.Printf(sb)
 
 	var resp_dec Response
 
